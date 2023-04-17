@@ -3,8 +3,11 @@ const mongoose = require('mongoose');
 const ProductSchema = new mongoose.Schema({
     users:{
         type: Array,
-        require: true,
         default: []
+    },
+    productType:{
+        type: String,
+        require: true
     },
     photo1: {
         type: String,
@@ -14,12 +17,15 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         require: true,        
     },
-    Description: {
+    description: {
         type: String,
         require:true,
         min: 200
+    },
+    comments:{
+        type: Array,
+        default:[]
     }
-
 },
 {
     timestamps: true 
