@@ -1,10 +1,24 @@
 const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
-    userId:{
-        type: String,
-        require: true
+    users:{
+        type: Array,
+        require: true,
+        default: []
     },
+    photo1: {
+        type: String,
+        require: true,  
+    },
+    photo2: {
+        type: String,
+        require: true,        
+    },
+    Description: {
+        type: String,
+        require:true,
+        min: 200
+    }
 
 },
 {
